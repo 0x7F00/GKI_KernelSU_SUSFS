@@ -281,7 +281,7 @@ jobs:
 
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
-          sed -i '$s|echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"|echo "${KERNELVERSION}-geae86f166c48-abogki367569362-4K"|' ./common/scripts/setlocalversion
+          sed -i '$s|echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"|echo "6.6.30-android15-8-geae86f166c48-abogki367569362-4K"|' ./common/scripts/setlocalversion
 
       - name: Build the Kernel
         run: |
