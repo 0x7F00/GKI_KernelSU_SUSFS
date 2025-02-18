@@ -344,18 +344,6 @@ jobs:
           zip -r "../$ZIP_NAME" ./*
           rm ./Image
 
-          ZIP_NAME="${{ inputs.android_version }}-${{ inputs.kernel_version }}.${{ inputs.sub_level }}-${{ inputs.os_patch_level }}-AnyKernel3-lz4.zip"
-          echo "Creating zip file: $ZIP_NAME..."
-          mv ../Image.lz4 ./Image.lz4
-          zip -r "../$ZIP_NAME" ./*
-          rm ./Image.lz4
-
-          ZIP_NAME="${{ inputs.android_version }}-${{ inputs.kernel_version }}.${{ inputs.sub_level }}-${{ inputs.os_patch_level }}-AnyKernel3-gz.zip"
-          echo "Creating zip file: $ZIP_NAME..."
-          mv ../Image.gz ./Image.gz
-          zip -r "../$ZIP_NAME" ./*
-          rm ./Image.gz
-
       - name: Run Boot Image ${{ inputs.android_version }} Build Script
         if: ${{ inputs.android_version == 'android12' }}
         run: |
@@ -435,4 +423,3 @@ jobs:
           name: kernel-${{ env.CONFIG }}
           path: |
             *.zip
-            *.img
