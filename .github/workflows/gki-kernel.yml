@@ -281,13 +281,10 @@ jobs:
 
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
-          sed -i 's/-4K/-geae86f166c48-abogki367569362-4K/g' ./common/arch/arm64/configs/gki_defconfig
-          sed -i '$s|echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"|echo "6.6.58-geae86f166c48-abogki367569362-4K"|' ./common/scripts/setlocalversion
+          sed -i '$s|echo "${KERNELVERSION}${file_localversion}${config_localversion}${LOCALVERSION}${scm_version}"|echo "${KERNELVERSION}-geae86f166c48-abogki367569362-4K"|' ./common/scripts/setlocalversion
 
       - name: Build the Kernel
         run: |
-          sudo timedatectl set-timezone "Asia/Shanghai"
-          sudo date --set="2024-12-15 14:17:38
           echo "Changing to configuration directory: $CONFIG..."
           cd "$CONFIG"
           # Run perl command to modify UTS_VERSION
