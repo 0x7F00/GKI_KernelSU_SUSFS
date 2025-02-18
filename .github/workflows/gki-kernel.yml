@@ -285,7 +285,7 @@ jobs:
 
       - name: Build the Kernel
         run: |
-          timedatectl set-timezone "Asia/Shanghai"
+          sudo timedatectl set-timezone "Asia/Shanghai"
           echo "Changing to configuration directory: $CONFIG..."
           cd "$CONFIG"
           # Run perl command to modify UTS_VERSION
