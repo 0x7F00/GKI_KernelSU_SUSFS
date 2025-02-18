@@ -285,6 +285,7 @@ jobs:
 
       - name: Build the Kernel
         run: |
+          timedatectl set-timezone "Asia/Shanghai"
           echo "Changing to configuration directory: $CONFIG..."
           cd "$CONFIG"
 
