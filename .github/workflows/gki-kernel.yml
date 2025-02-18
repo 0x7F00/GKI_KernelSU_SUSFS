@@ -289,6 +289,7 @@ jobs:
           cd "$CONFIG"
           # Run perl command to modify UTS_VERSION
           export UTS_VERSION="#1 SMP PREEMPT Sat Apr 29 15:20:50 UTC 2024"
+          export BUILD_TIMESTAMP="#1 SMP PREEMPT Sat Apr 29 15:20:50 UTC 2024"
           echo "Building the kernel..."
           if [ -f "build/build.sh" ]; then
             sed -i 's/-dirty//' ./common/scripts/setlocalversion
