@@ -281,7 +281,7 @@ jobs:
 
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
-          sed -i '$s|CONFIG_LOCALVERSION="-4k"|CONFIG_LOCALVERSION="-geae86f166c48-abogki367569362-4K"|' ./common/arch/arm64/configs/gki_defconfig
+          sed -i 's/-4K/-geae86f166c48-abogki367569362-4K/g' ./common/arch/arm64/configs/gki_defconfig
 
       - name: Build the Kernel
         run: |
